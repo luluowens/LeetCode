@@ -13,7 +13,7 @@ class TestLinkedList(unittest.TestCase) :
         node2.next = node3
         node3.next = node4
         node4.next = node2
-        self.assertEqual(Solution(), True)
+        self.assertEqual(Solution.hasCycle({node1, node2, node3, node4}, node1), True)
 
 if __name__ == '__main__':
     unittest.main()
