@@ -1,4 +1,4 @@
-from LinkedListCycle.linked_list_intersection import Solution, ListNode
+from LinkedListIntersection.linked_list_intersection import Solution, ListNode
 import unittest
 
 

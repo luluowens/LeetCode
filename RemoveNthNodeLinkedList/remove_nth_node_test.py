@@ -1,4 +1,4 @@
-from LinkedListCycle.remove_nth_node import Solution, ListNode
+from RemoveNthNodeLinkedList.remove_nth_node import Solution, ListNode
 import unittest
 
 
