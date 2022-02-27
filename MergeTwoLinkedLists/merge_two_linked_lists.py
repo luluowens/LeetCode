@@ -8,15 +8,29 @@ class Solution:
     def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
         currA = list1
         currB = list2
-        tempHead = ListNode()
-        temp = ListNode()
-        while currA and currB :
-            if currA.val <= currB.val :
-                if not tempHead :
-                    tempHead = currA
-                    tempHead.next = currB
-                    temp = tempHead.next
+        new = ListNode(0)
+        head = ListNode(-101)
+        while currA or currB :
+            if currA and currB:
+                if currA.val < currB.val :
+                    new.next = currA
+                    new = new.next
+                    currA = currA.next
                 else :
-                    temp.next = currA
-                    temp.next.next = currB
-                    
+                    new.next = currB
+                    new = new.next
+                    currB = currB.next
+            elif currA :
+                new.next = currA
+                new = new.next
+                currA = currA.next
+            elif currB :
+                new.next = currB
+                new = new.next
+                currB = currB.next
+            if head.val == -101 :
+                head = new
+        if head.val == -101 :
+            return None
+        else :
+            return head
