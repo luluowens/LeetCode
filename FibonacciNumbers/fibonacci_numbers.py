@@ -1,6 +1,7 @@
 class Solution:
     def fib(self, N: int) -> int:
         cache = {}
+        
         def recur_fib(N: int) -> int:
             if N in cache:
                 return cache[N]
