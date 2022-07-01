@@ -15,18 +15,18 @@ class Solution:
                     sum_vals += "1"
         return sum_vals[::-1]
 
-my_sol = Solution()
-# print(my_sol.addBinary("11", "1"))
-print(my_sol.addBinary("1010", "1011"))
+# my_sol = Solution()
+# # print(my_sol.addBinary("11", "1"))
+# print(my_sol.addBinary("1010", "1011"))
 
-# import unittest
+import unittest
 
-# class TestLinkedList(unittest.TestCase) :
+class TestLinkedList(unittest.TestCase) :
 
-#     def test_solution(self) :
-#         my_sol = Solution()
-#         self.assertEqual(my_sol.addBinary("11", "1"), "100")
-#         self.assertEqual(my_sol.addBinary("1010", "1011"), "10101")
+    def test_solution(self) :
+        my_sol = Solution()
+        self.assertEqual(my_sol.addBinary("11", "1"), "100")
+        self.assertEqual(my_sol.addBinary("1010", "1011"), "10101")
 
-# if __name__ == '__main__':
-#     unittest.main()
+if __name__ == '__main__':
+    unittest.main()
