@@ -7,8 +7,9 @@ Given a string s, return true if it is a palindrome, or false otherwise.
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        s = s.lower()
-        chars = [char for char in s if ((ord(char) >= 97 and ord(char) <= 121) or (ord(char) >= 48 and ord(char) <= 57))]
+        # s = s.lower()
+        # chars = [char for char in s if ((ord(char) >= 97 and ord(char) <= 121) or (ord(char) >= 48 and ord(char) <= 57))]
+        chars = [char.lower() for char in s if char.isalnum()]
         return chars == chars[::-1]
 
 
