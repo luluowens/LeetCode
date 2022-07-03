@@ -1,29 +1,19 @@
 '''Given an integer numRows, return the first numRows of Pascal's triangle.
 '''
-import math
+import operator as op
+from functools import reduce
 
 class Solution:
     def generate(self, numRows: int) -> list[list[int]]:
-        # cache = []
-
-        # for num in range(numRows) :
-        #     if num == 0 :
-        #         cache.append([1])
-        #     else :
-        #         row = []
-        #         row.append(1)
-        #         previous_row = cache[num - 1]
-        #         for i in range(1, num) :
-        #             row.append(previous_row[i-1] + previous_row[i])
-        #         row.append(1)
-        #         cache.append(row)
-
         cache = []
+        
+        def nCr(n, r) :
+            numer = reduce(op.mul, range(n, n-r, -1), 1)
+            denom = reduce(op.mul, range(1, r+1), 1)
+            return numer // denom
 
         for num in range(numRows) :
-            row = []
-            for i in range(num+1) :
-                row.append(int(math.factorial(num) / (math.factorial(i) * math.factorial(num-i))))
+            row = [nCr(num,i) for i in range(num+1)]
             cache.append(row)
         
         return cache
